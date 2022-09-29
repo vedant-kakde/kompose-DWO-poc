@@ -18,14 +18,9 @@ This repository is a proof of concept for integrating the compose file support i
 
 This repo is written in pure golang, so make sure you have golang setup (go 1.16+) on your system before setting up the development environment.
 
-Install the dependencies and devDependencies and start the server.
+To run use the following command: 
+
 
 ```sh
-go build main.go
-```
-
-To run...
-
-```sh
-./main
+go run main.go
 ```

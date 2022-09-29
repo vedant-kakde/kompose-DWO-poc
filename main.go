@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"flag"
 	"fmt"
 	"log"
 	"path/filepath"
@@ -31,17 +30,10 @@ import (
 
 func main(){
 	fmt.Printf("apiv1.NamespaceAll: %v\n", apiv1.NamespaceAll)
-	var kubeconfig *string
-	if home := homedir.HomeDir(); home != "" {
-		kubeconfig = flag.String("kubeconfig", filepath.Join(home, ".kube", "config"), "(optional) absolute path to the kubeconfig file")
-	} else {
-		kubeconfig = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
-	}
-	//flag.Parse()
-	*kubeconfig = "ap"
-	config, err := clientcmd.BuildConfigFromFlags("", *kubeconfig)
+
+	config, err := clientcmd.BuildConfigFromFlags("", filepath.Join(homedir.HomeDir(), ".kube", "config"))
 	if err != nil {
-		panic(err)
+		panic(err.Error())
 	}
 	clientset, err := kube.NewForConfig(config)
 	if err != nil {
