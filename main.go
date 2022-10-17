@@ -69,7 +69,7 @@ func main() {
 	opt := kobject.ConvertOptions{
 		CreateD:                true,
 		CreateDeploymentConfig: true,
-		Volumes:                "persistentVolumeClaim",
+		Volumes:                "hostPath",
 		Replicas:               1,
 		Provider:               "kubernetes",
 		InputFiles:             []string{"compose.yml"},
