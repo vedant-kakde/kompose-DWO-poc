@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-This repository is a proof of concept for integrating the compose file support in the devworkspace operator repostiory by resuing the pkgs of kubernetes kompose.
+This repository is a proof of concept for integrating the compose file support in the devworkspace operator repository by reusing the pkgs of kubernetes kompose.
 
 - Currently, the POC only works with compose files which contain deployments and services.
 - kompose doesn't provide support for compose files with the build command.
